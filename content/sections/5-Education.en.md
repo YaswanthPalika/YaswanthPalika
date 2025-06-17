@@ -6,7 +6,7 @@ education: [
   {
     school: "Indian Institute of Information Technology Pune",
     degree: "B.Tech. in Electronics and Communication Engineering",
-    score: "CGPA - 6.2",
+    score: "CGPA - 6.7",
     highlights: []
   },
   {

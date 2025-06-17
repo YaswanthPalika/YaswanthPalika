@@ -6,12 +6,17 @@ import { Row, Col } from "react-bootstrap";
 import SectionHeader from "components/SectionHeader";
 import PageSection from "components/PageSection";
 
+import Marquee from "react-fast-marquee";
+
 import "./Skills.scss";
+import skillsData from "../../../data/skillsData";
+import skillsImage from "../../../data/skillsImage";
 
 const Skills = ({ className, frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
+
 
   const { anchor, header: rootHeader, subheader: rootSubHeader, skills } = frontmatter;
 
@@ -21,9 +26,27 @@ const Skills = ({ className, frontmatter }) => {
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row>
-        <h3>Programming Languages</h3>
+                <Marquee 
+                        style={{marginTop: "45px", }}
+                        gradient={false} 
+                        speed={190}
+                        pauseOnHover={true}
+                        pauseOnClick={true} 
+                        delay={0}
+                        play={true} 
+                        direction="left"
+                    >
+                        {skillsData.map((skill) => (
+                            <div className="skill--box" key={skill} >
+                                <img src={skillsImage(skill)} alt={skill} />
+                                <h3 style={{color: "black", fontSize: "1.2rem", marginTop: "10px"}}>
+                                    {skill}
+                                </h3>
+                            </div>
+                        ))}
+                    </Marquee>
       </Row>
-      <Row>
+      {/* <Row>
         {skills.languages.map((language) => (
           <Col lg={1} xs={3} sm={2} key={language} className="my-1">
             <div className="d-flex flex-column align-items-center text-center">
@@ -80,7 +103,8 @@ const Skills = ({ className, frontmatter }) => {
             </div>
           </Col>
         ))}
-      </Row>
+      </Row> */}
+
     </PageSection>
   );
 };

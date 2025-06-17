@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Typewriter from "typewriter-effect";
 
 // import { Button } from "react-bootstrap";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import Particles from "react-tsparticles";
 import Background from "../../../content/assets/images/background.png";
 import BackgroundSmall from "../../../content/assets/images/backgroundsmall.png";
+import Profile from "../../../content/assets/images/profile.jpeg";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -33,6 +35,7 @@ const Top = ({ frontmatter }) => {
   // }
 
   return (
+    <div style={{ position: "relative", height: "100vh", width: "100%" }}>
     <Particles
       height="100vh"
       id="tsparticles"
@@ -42,12 +45,12 @@ const Top = ({ frontmatter }) => {
           reduce: true,
         },
         fullScreen: { enable: false ,
-        zIndex : -1},
+        zIndex : -10},
         background: {
-          image: backgroundImage,
+          // image: backgroundImage,
           position: "center",
           color: {
-            value: "#0000",
+            value: "#00072D",
           },
           size: "cover",
         },
@@ -124,6 +127,38 @@ const Top = ({ frontmatter }) => {
         detectRetina: true,
       }}
     />
+      {/* Centered content */}
+  <div
+    className="centered-text"
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      color: "#fff", // or any other color
+      textAlign: "center",
+      zIndex: 1,
+    }}
+  >
+    <img src={Profile} alt="Logo" style={{ 
+      width: "13rem", height: "13rem", marginBottom: "20px",
+      borderRadius: "50%",
+      }} />
+    <h2 style={{ fontSize: "2.5rem", marginBottom: "20px",
+      fontFamily: "Open Sans",
+      color:"gold"
+     }}>Yaswanth Palika</h2>
+    <Typewriter
+                options={{
+                  strings: ["Full-Stack Developer", "App Developer", "Software Engineer", "AI Enthusiast"],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 60,
+                  fontSize: "1.5rem",
+                }}
+              />
+  </div>
+    </div>
   );
 };
 

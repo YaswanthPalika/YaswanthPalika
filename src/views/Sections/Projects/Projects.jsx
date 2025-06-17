@@ -49,6 +49,13 @@ const Projects = ({ className, frontmatter }) => {
     <PageSection className={clsx("portfolio-section", className)} id={anchor}>
       <Row>
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
+        <h6 style={{
+          marginTop:"-20px",
+          marginBottom: "20px",
+          marginHorizontal: "auto",
+          width: "100%",
+          textAlign: "center",
+        }}>Here are my college projects</h6>
       </Row>
       <Tab.Container id="left-tabs-example" defaultActiveKey="visai">
         <Row>

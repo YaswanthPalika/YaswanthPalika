@@ -20,11 +20,11 @@ const Footer = ({ frontmatter }) => {
             Made with <img alt="Love" src={Love} /> by Yaswanth Palika{" "}
           </p>
         </Row>
-        <Row className="align-items-center text-center">
+        {/* <Row className="align-items-center text-center">
           <Col lg={5} className="text-lg-left">
             {copyright}
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </footer>
   );
