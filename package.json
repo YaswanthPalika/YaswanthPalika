@@ -92,6 +92,7 @@
     "eslint": "eslint ./src",
     "test": "cross-env NODE_ENV=test yarn run eslint",
     "testbuild": "yarn test && yarn build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
